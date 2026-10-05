@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fuego Alquímico | Jeanett Romero — Hacia el encuentro contigo</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&amp;family=Cinzel:wght@400;600;700&amp;family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- FontAwesome Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        creamBg: '#FDF8F0',
+                        creamAlt: '#F5EFE6',
+                        creamCard: '#FFFFFF',
+                        deepText: '#2C211E',
+                        softText: '#5A4A42',
+                        plum: '#4A2E5D',
+                        plumLight: '#6A4A8A',
+                        fire: '#C8521A',
+                        amber: '#D97C2B',
+                        gold: '#C88A2B',
+                        goldLight: '#FAF3D8',
+                        goldAccent: '#D4AF37'
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        cinzelDeco: ['Cinzel Decorative', 'serif'],
+                        cormorant: ['Cormorant Garamond', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #FDF8F0;
+            color: #2C211E;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .glass-header {
+            background: rgba(253, 248, 240, 0.94);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(200, 138, 43, 0.2);
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #C8521A 0%, #C88A2B 50%, #4A2E5D 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #C88A2B 0%, #D97C2B 100%);
+            color: #FFFFFF;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(200, 138, 43, 0.25);
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(200, 138, 43, 0.4);
+        }
+
+        .btn-outline-gold {
+            border: 1px solid #C88A2B;
+            color: #C88A2B;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-gold:hover {
+            background: rgba(200, 138, 43, 0.1);
+            border-color: #C8521A;
+            color: #C8521A;
+        }
+
+        .sacred-pattern {
+            background-image: radial-gradient(rgba(200, 138, 43, 0.12) 1px, transparent 0);
+            background-size: 28px 28px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FDF8F0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #C88A2B;
+            border-radius: 4px;
+        }
+
+        .modal-active {
+            opacity: 1 !important;
+            pointer-events: auto !important;
+        }
+    .eyebrow{text-transform:uppercase;letter-spacing:.24em;font-size:.72rem;color:#b28a2e;font-weight:600;margin-bottom:1rem}.section-title{font-family:Cormorant Garamond,serif;font-size:clamp(2.5rem,5vw,4rem);line-height:1;color:#2a211c}.lead{font-size:1.18rem;line-height:1.7;color:#5b4c40}.card,.process,.portal{background:rgba(255,255,255,.58);border:1px solid rgba(212,175,55,.2);border-radius:1.5rem;padding:1.6rem;box-shadow:0 12px 35px rgba(42,42,42,.05)}.card h3,.process h3,.portal h3{font-family:Cormorant Garamond,serif;font-size:1.8rem;color:#2a211c;margin:.5rem 0}.card p,.process p,.portal p{color:#66584d;line-height:1.65}.card-number,.process b,.portal span{font-size:.75rem;letter-spacing:.15em;color:#b28a2e}.btn-primary{background:#2a2a2a;color:#fff;padding:.8rem 1.25rem;border-radius:999px;font-weight:600}.btn-secondary{border:1px solid #c9a94b;color:#5a4a2e;padding:.8rem 1.25rem;border-radius:999px;font-weight:600}</style>
+</head>
+<body class="sacred-pattern antialiased text-deepText">
+<!-- HEADER / NAVEGACIÓN -->
+<header class="fixed top-0 left-0 right-0 z-50 glass-header transition-all duration-300" id="main-header">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<!-- Logo -->
+<a class="flex items-center gap-3 group" href="#inicio" onclick="navigateTo('inicio')">
+<div class="w-11 h-11 rounded-full border border-gold bg-creamAlt flex items-center justify-center shadow-md group-hover:border-fire transition-all">
+<i class="fa-solid fa-fire text-fire text-xl group-hover:scale-110 transition-transform"></i>
+</div>
+<div class="flex flex-col">
+<span class="font-cinzelDeco text-base sm:text-lg font-bold tracking-wider text-plum leading-tight">FUEGO ALQUÍMICO</span>
+<span class="font-cinzel text-xs text-gold font-semibold tracking-widest uppercase">Jeanett Romero</span>
+</div>
+</a>
+<!-- Desktop Nav -->
+<nav class="hidden lg:flex items-center space-x-5 text-xs uppercase font-semibold tracking-wider">
+<a class="nav-link text-softText hover:text-fire transition-colors px-1 py-1" href="#inicio" onclick="navigateTo('inicio')">Inicio</a>
+<a class="nav-link text-softText hover:text-fire transition-colors px-1 py-1" href="#sobre" onclick="navigateTo('sobre')">Sobre Jeanett</a>
+<a class="nav-link text-softText hover:text-fire transition-colors px-1 py-1" href="#acompanamiento" onclick="navigateTo('terapias')">Terapias</a>
+<a class="nav-link text-softText hover:text-fire transition-colors px-1 py-1" href="#curso" onclick="navigateTo('curso')">Curso Radiestesia</a>
+<a class="nav-link text-softText hover:text-fire transition-colors px-1 py-1" href="#bitacora" onclick="navigateTo('bitacora')">Bitácora</a>
+<a class="nav-link text-plum font-bold flex items-center gap-1.5 px-2.5 py-1 bg-creamAlt rounded-lg border border-gold/40" href="#avatar" onclick="navigateTo('avatar')">
+<i class="fa-solid fa-wand-magic-sparkles text-fire"></i> Sello Alquímico
+                    </a>
+<a class="nav-link text-softText hover:text-fire transition-colors px-1 py-1" href="#tienda" onclick="navigateTo('tienda')">Tienda</a>
+</nav>
+<!-- CTA Button -->
+<div class="hidden sm:flex items-center gap-3">
+<a class="btn-gold px-5 py-2.5 rounded-full font-cinzel text-xs font-bold uppercase tracking-wider flex items-center gap-2" href="https://wa.me/584123791495?text=Hola%20Jeanett,%20deseo%20más%20información%20sobre%20tus%20servicios" target="_blank">
+<i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
+                    </a>
+</div>
+<!-- Mobile Menu Button -->
+<button class="lg:hidden text-plum p-2 rounded-lg hover:bg-creamAlt focus:outline-none" onclick="toggleMobileMenu()">
+<i class="fa-solid fa-bars text-2xl"></i>
+</button>
+</div>
+</div>
+<!-- Mobile Drawer Navigation -->
+<div class="hidden lg:hidden bg-creamBg border-b border-gold/30 px-6 pt-3 pb-6 space-y-3 shadow-lg" id="mobile-menu">
+<a class="block text-deepText font-medium py-2 border-b border-gold/10" href="#inicio" onclick="navigateTo('inicio'); toggleMobileMenu()">Inicio</a>
+<a class="block text-deepText font-medium py-2 border-b border-gold/10" href="#sobre" onclick="navigateTo('sobre'); toggleMobileMenu()">Sobre Jeanett</a>
+<a class="block text-deepText font-medium py-2 border-b border-gold/10" href="#acompanamiento" onclick="navigateTo('terapias'); toggleMobileMenu()">Terapias &amp; Acompañamiento</a>
+<a class="block text-deepText font-medium py-2 border-b border-gold/10" href="#curso" onclick="navigateTo('curso'); toggleMobileMenu()">Curso "Tu Energía Habla"</a>
+<a class="block text-deepText font-medium py-2 border-b border-gold/10" href="#bitacora" onclick="navigateTo('bitacora'); toggleMobileMenu()">Bitácora Atemporal</a>
+<a class="block text-plum font-semibold py-2 border-b border-gold/10" href="#avatar" onclick="navigateTo('avatar'); toggleMobileMenu()">Creador de Sello Alquímico</a>
+<a class="block text-deepText font-medium py-2 border-b border-gold/10" href="#tienda" onclick="navigateTo('tienda'); toggleMobileMenu()">Tienda &amp; Catálogo Unificado</a>
+<a class="block text-deepText font-medium py-2" href="#contacto" onclick="navigateTo('contacto'); toggleMobileMenu()">Contacto</a>
+<a class="w-full btn-gold py-3 rounded-xl font-cinzel text-xs font-bold uppercase text-center block mt-2" href="https://wa.me/584123791495" target="_blank">
+                Agendar por WhatsApp
+            </a>
+</div>
+</header>
+<!-- MAIN CONTAINER -->
+<main class="pt-20">
+<!-- SECTION: HERO (INICIO) -->
+<!-- SECTION: SOBRE JEANETT ROMERO -->
+<!-- SECTION: TERAPIAS & ACOMPAÑAMIENTO CONSCIENTE -->
+<!-- SECTION: CURSO - TU ENERGÍA HABLA -->
+<!-- SECTION: BITÁCORA ATEMPORAL -->
+<!-- SECTION: CREADOR INTERACTIVO DE SELLO / AVATAR -->
+<!-- SECTION: TEST BIOENERGÉTICO EXPRÉS -->
+<!-- SECTION: TIENDA Y CATÁLOGO UNIFICADO DE PRODUCTOS -->
+<!-- SECTION: CONTACTO -->
+</main><section class="page-section min-h-[88vh] relative flex items-center justify-center py-20 bg-gradient-to-b from-creamBg via-creamAlt to-creamBg border-b border-gold/20" id="inicio"><div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center"><div><p class="uppercase tracking-[.28em] text-xs text-gold mb-5">Fuego Alquímico</p><h1 class="font-display text-5xl md:text-7xl leading-[.95] text-ink">Hacia el encuentro contigo</h1><p class="mt-7 text-xl md:text-2xl text-mid max-w-xl">Acompañamiento consciente para mujeres que desean comprender su historia, transformar sus patrones y reencontrarse consigo mismas.</p><p class="mt-5 text-base text-soft max-w-xl">Un proceso respetuoso y personalizado que integra herramientas terapéuticas, reflexión profunda y acompañamiento humano.</p><div class="mt-8 flex flex-wrap gap-4"><a class="btn-primary" href="#acompanamiento">Conoce el acompañamiento</a><a class="btn-secondary" href="#bitacora">Explora la Bitácora</a></div></div><div class="flex justify-center"><div class="relative w-full max-w-md aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl border border-gold/20"><img alt="Jeanett Romero" class="w-full h-full object-cover" src="IMAGEN_HERO_JEANETT.jpg"/></div></div></div></section><section class="page-section py-20 bg-creamBg" id="sobre"><div class="max-w-5xl mx-auto px-6 grid md:grid-cols-[.8fr_1.2fr] gap-12 items-center"><div class="aspect-[4/5] rounded-[2rem] overflow-hidden border border-gold/20 shadow-xl"><img alt="Jeanett Romero" class="w-full h-full object-cover" src="IMAGEN_SOBRE_JEANETT.jpg"/></div><div><p class="eyebrow">Sobre mí</p><h2 class="section-title">Hola, soy Jeanett Romero</h2><p class="lead">Soy acompañante de procesos de transformación personal y terapeuta biointegral.</p><p>Durante años he integrado distintas herramientas terapéuticas y experiencias de acompañamiento para crear un enfoque centrado en la escucha, la consciencia y la transformación humana.</p><p class="mt-5">No creo en fórmulas universales. Creo en el encuentro honesto con lo que cada persona trae, y en la capacidad de cada una de encontrar su propio camino cuando tiene el espacio adecuado para hacerlo.</p></div></div></section><section class="page-section py-20 bg-creamAlt border-y border-gold/20" id="acompanamiento"><div class="max-w-6xl mx-auto px-6"><div class="max-w-3xl"><p class="eyebrow">Acompañamiento</p><h2 class="section-title">Elige cómo deseas comenzar</h2><p class="lead">Todo proceso comienza con una Conversación de Sintonía de 30 minutos, gratuita y sin compromiso. Un espacio para conocernos y descubrir si este acompañamiento es para ti.</p></div><div class="grid md:grid-cols-3 gap-6 mt-10"><article class="card"><span class="card-number">01</span><h3>Encuentro Alquímico</h3><p>Hay momentos en que sentimos que algo necesita atención, aunque no sepamos exactamente qué. Es una sesión individual donde nos detenemos a observar con profundidad aquello que hoy está buscando ser visto, comprendido o transformado.</p></article><article class="card"><span class="card-number">02</span><h3>Proceso Alquímico</h3><p>Hay experiencias que no llegan para ser comprendidas en una sola conversación. Patrones que se repiten. Conflictos que conservan la misma raíz. Aquí trabajamos con mayor profundidad aquello que busca ser comprendido, liberado o integrado.</p></article><article class="card"><span class="card-number">03</span><h3>Camino Alquímico</h3><p>Existen etapas que marcan un antes y un después. Este proceso de acompañamiento profundo está diseñado para sostener esos períodos de transformación, respetando tu ritmo y favoreciendo la integración.</p></article></div><p class="mt-8 text-center text-mid">¿No sabes cuál elegir? Comienza con la Conversación de Sintonía gratuita y lo reconocemos juntas.</p></div></section><section class="page-section py-20 bg-creamBg" id="proceso"><div class="max-w-5xl mx-auto px-6 text-center"><p class="eyebrow">El proceso</p><h2 class="section-title">El proceso de transformación</h2><p class="lead mx-auto max-w-2xl">Cuatro movimientos que se repiten, profundizan y renuevan a lo largo de todo el acompañamiento.</p><div class="grid md:grid-cols-4 gap-5 mt-12"><div class="process"><b>01</b><h3>Comprender</h3><p>Comprender el momento que estás atravesando sin juicio ni prisa.</p></div><div class="process"><b>02</b><h3>Reconocer</h3><p>Identificar patrones, creencias y dinámicas presentes en tu historia.</p></div><div class="process"><b>03</b><h3>Dar sentido</h3><p>Conectar lo vivido con lo que quieres.</p></div><div class="process"><b>04</b><h3>Integrar</h3><p>Avanzar con nuevas herramientas, perspectivas y mayor claridad interior.</p></div></div></div></section><section class="page-section py-20 bg-creamAlt border-y border-gold/20" id="curso"><div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center"><div><p class="eyebrow">Experiencia</p><h2 class="section-title">Tu Energía Habla</h2><p class="text-xl text-mid">Curso de Exploración Bioenergética con Radiestesia Pendular</p><p class="mt-5">Una experiencia de exploración y autoconocimiento con el péndulo, orientada a desarrollar la neutralidad, la observación y una mayor conciencia de tu mundo interior.</p><a class="btn-primary mt-8 inline-block" href="#contacto">Conocer el curso</a></div><div class="rounded-[2rem] overflow-hidden border border-gold/20 shadow-xl aspect-[4/3]"><img alt="Tu Energía Habla" class="w-full h-full object-cover" src="IMAGEN_TU_ENERGIA_HABLA.jpg"/></div></div></section><section class="page-section py-20 bg-creamBg" id="bitacora"><div class="max-w-6xl mx-auto px-6"><div class="text-center max-w-3xl mx-auto"><p class="eyebrow">Creación</p><h2 class="section-title">Bitácora Atemporal</h2><p class="text-xl text-mid">Tu Círculo Sagrado · Un mapa para volver a ti misma</p><p class="mt-5">Un recorrido de 52 semanas estructurado en cuatro portales de transformación femenina consciente. Cada ciclo te invita a ir más adentro.</p></div><div class="grid md:grid-cols-4 gap-5 mt-12"><article class="portal"><span>01</span><h3>Artemisa</h3><p>Instinto libre, soberanía y fuerza interior.</p></article><article class="portal"><span>02</span><h3>Atenea</h3><p>Claridad, perspectiva y acción consciente.</p></article><article class="portal"><span>03</span><h3>Perséfone</h3><p>Descenso, integración y transformación.</p></article><article class="portal"><span>04</span><h3>Hestia</h3><p>Hogar interior, presencia y arraigo.</p></article></div><div class="mt-10 grid md:grid-cols-2 gap-8 items-center"><div class="rounded-[2rem] overflow-hidden border border-gold/20 shadow-xl aspect-[4/3]"><img alt="Bitácora Atemporal" class="w-full h-full object-cover" src="IMAGEN_BITACORA_PORTADA.jpg"/></div><div><h3 class="text-3xl font-display">Un mapa para volver a ti</h3><p class="mt-4">La Bitácora Círculo Sagrado es una herramienta de autoconocimiento diseñada para acompañarte durante 52 semanas, desde el silencio de tu propia historia.</p><a class="btn-primary mt-7 inline-block" href="#contacto">Conocer la Bitácora</a></div></div></div></section><section class="page-section py-20 bg-creamAlt border-y border-gold/20" id="avatar"><div class="max-w-5xl mx-auto px-6 text-center"><p class="eyebrow">Identidad</p><h2 class="section-title">La llama que acompaña el camino</h2><p class="lead max-w-2xl mx-auto">Un pequeño espíritu de fuego como representación visual del Fuego Alquímico.</p><div class="mt-10 flex justify-center"><div class="w-64 h-64 rounded-full bg-white/60 border border-gold/20 flex items-center justify-center shadow-xl"><img alt="Avatar Fuego Alquímico" class="max-w-[80%] max-h-[80%] object-contain" src="AVATAR_LLAMA_ALQUIMICA.png"/></div></div></div></section><section class="page-section py-20 bg-creamBg" id="tienda"><div class="max-w-6xl mx-auto px-6"><p class="eyebrow">Tienda</p><h2 class="section-title">Creaciones y experiencias</h2><p class="lead max-w-2xl">Este espacio reunirá progresivamente las creaciones, herramientas y experiencias de Fuego Alquímico.</p><div class="grid md:grid-cols-3 gap-6 mt-10"><article class="card"><h3>Bitácora Atemporal</h3><p>Tu Círculo Sagrado.</p><a class="text-gold font-semibold" href="#bitacora">Ver Bitácora →</a></article><article class="card"><h3>Tu Energía Habla</h3><p>Curso de exploración bioenergética con radiestesia pendular.</p><a class="text-gold font-semibold" href="#curso">Conocer el curso →</a></article><article class="card"><h3>Próximamente</h3><p>Nuevas creaciones y recursos para acompañar tu camino.</p></article></div></div></section><section class="page-section py-20 bg-creamAlt border-t border-gold/20" id="contacto"><div class="max-w-4xl mx-auto px-6 text-center"><p class="eyebrow">Contacto</p><h2 class="section-title">El cambio comienza cuando decides escucharte</h2><p class="lead max-w-2xl mx-auto">Si sientes que ha llegado el momento de comprender lo que estás viviendo y avanzar con mayor claridad, podemos comenzar con una Conversación de Sintonía.</p><a class="btn-primary mt-8 inline-block" href="https://calendly.com/tucirculosagrado">Agendar Conversación de Sintonía</a></div></section></body></html>
