@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fuego Alquímico · Hacia el encuentro contigo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#f7f5f2;--cream2:#ede9e3;--paper:#fffdf9;--dark:#2a2a2a;--ink:#403b38;--grey:#66615d;--gold:#d4af37;--gold2:#e8c95a;--fire:#c8521a;--plum:#6a4a70;--teal:#4d8f8c;--line:rgba(90,90,90,.16);--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost',system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--grey);font-family:var(--sans);font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased}a{text-decoration:none;color:inherit}img{display:block;max-width:100%}button{font:inherit}
+.header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(247,245,242,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(212,175,55,.15)}.nav{max-width:1180px;margin:auto;padding:13px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:11px}.brand-mark{width:39px;height:39px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 50% 35%,#f8d889,#d97c2b 55%,#8d3219);box-shadow:0 5px 18px rgba(200,82,26,.18);overflow:hidden}.brand-mark img{width:100%;height:100%;object-fit:contain}.brand-text{font-family:var(--serif);font-size:1.35rem;font-weight:500;color:var(--ink);line-height:1}.brand-text small{display:block;font-family:var(--sans);font-size:.53rem;letter-spacing:.19em;text-transform:uppercase;color:#a98331;margin-top:4px}.navlinks{display:flex;align-items:center;gap:22px;font-size:.78rem;color:#5e5752}.navlinks a:hover{color:var(--fire)}.nav-cta{padding:9px 15px;border:1px solid rgba(212,175,55,.55);border-radius:999px;color:#7c6025!important}.menu{display:none;border:0;background:none;color:var(--ink);font-size:1.35rem}
+.section{padding:110px 24px}.wrap{max-width:1180px;margin:auto}.eyebrow{font-size:.63rem;font-weight:500;letter-spacing:.23em;text-transform:uppercase;color:#a98432;margin:0 0 15px}.title{font-family:var(--serif);font-weight:400;color:var(--ink);font-size:clamp(2.8rem,6vw,5.4rem);line-height:.95;margin:0;letter-spacing:-.015em}.lead{font-size:1rem;color:var(--grey);max-width:680px}.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500;transition:.25s}.btn-dark{background:var(--dark);color:#fff}.btn-gold{background:var(--gold);color:#fff}.btn-outline{border:1px solid rgba(90,90,90,.25);color:var(--ink);background:rgba(255,255,255,.35)}.btn:hover{transform:translateY(-2px)}
+.hero{min-height:100vh;padding:135px 24px 85px;background:radial-gradient(circle at 78% 30%,rgba(77,143,140,.13),transparent 23%),radial-gradient(circle at 88% 78%,rgba(200,82,26,.12),transparent 24%),linear-gradient(135deg,#fbf7f1,#f0e7dd 62%,#eee2d7);display:grid;align-items:center;overflow:hidden}.hero-grid{max-width:1180px;margin:auto;width:100%;display:grid;grid-template-columns:1.02fr .98fr;gap:50px;align-items:center}.hero-copy{position:relative;z-index:2}.hero-title{font-family:var(--serif);font-size:clamp(4.2rem,9vw,8rem);font-weight:300;line-height:.82;color:var(--ink);margin:0}.hero-title em{color:var(--fire);font-style:italic}.hero-sub{font-family:var(--serif);font-style:italic;color:#a17c31;font-size:clamp(1.25rem,2.5vw,1.7rem);margin:20px 0 25px}.hero-copy p{max-width:610px}.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}.hero-art{position:relative;min-height:600px;display:grid;place-items:center}.orbit{position:absolute;width:510px;height:510px;border:1px solid rgba(212,175,55,.24);border-radius:50%;transform:rotate(-17deg)}.orbit:before,.orbit:after{content:'';position:absolute;border:1px solid rgba(106,74,112,.13);border-radius:50%}.orbit:before{inset:36px}.orbit:after{inset:100px}.hero-photo{position:relative;width:min(390px,72%);aspect-ratio:4/5;border-radius:48% 48% 42% 42%;overflow:hidden;border:1px solid rgba(212,175,55,.28);box-shadow:0 30px 70px rgba(65,48,39,.18);z-index:2;background:#e9dfd5}.hero-photo img{width:100%;height:100%;object-fit:cover}.flame{position:absolute;width:185px;right:2%;bottom:0;z-index:4;filter:drop-shadow(0 14px 20px rgba(120,64,28,.18));animation:float 5s ease-in-out infinite}.flame img{width:100%;mix-blend-mode:multiply}.hero-note{position:absolute;left:0;bottom:30px;z-index:5;background:rgba(255,253,249,.88);backdrop-filter:blur(8px);padding:14px 18px;border:1px solid var(--line);border-radius:18px;font-family:var(--serif);font-style:italic;font-size:1.15rem;max-width:220px;box-shadow:0 15px 30px rgba(60,45,35,.08)}.hero-note small{display:block;font-family:var(--sans);font-style:normal;font-size:.55rem;letter-spacing:.16em;text-transform:uppercase;color:#9f7a30;margin-bottom:3px}@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-11px) rotate(2deg)}}
+.band{background:var(--dark);color:#f7f5f2;padding:22px 24px}.band-inner{max-width:1180px;margin:auto;display:flex;justify-content:center;gap:30px;flex-wrap:wrap;font-size:.61rem;letter-spacing:.17em;text-transform:uppercase}.band-inner span:before{content:'✦';color:var(--gold2);margin-right:9px}
+.explore{background:var(--paper)}.explore-head{display:flex;justify-content:space-between;align-items:end;gap:35px;margin-bottom:48px}.explore-head .lead{max-width:470px}.path-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.path{position:relative;min-height:250px;padding:34px;border:1px solid var(--line);border-radius:28px;overflow:hidden;background:linear-gradient(135deg,#fffdf9,#f4eee7);transition:.3s}.path:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(65,48,39,.09);border-color:rgba(212,175,55,.42)}.path:nth-child(2){background:linear-gradient(135deg,#f7f2f4,#eee5eb)}.path:nth-child(3){background:linear-gradient(135deg,#f0f5f4,#e8efed)}.path:nth-child(4){background:linear-gradient(135deg,#f8f1e9,#efe2d5)}.path-number{font-family:var(--serif);font-size:4.5rem;font-weight:300;line-height:.8;color:rgba(106,74,112,.2);position:absolute;right:22px;top:22px}.path-label{font-size:.61rem;letter-spacing:.2em;text-transform:uppercase;color:#a98432}.path h2{font-family:var(--serif);font-size:2.2rem;font-weight:400;color:var(--ink);margin:12px 0 8px}.path p{max-width:450px;margin:0 0 22px;font-size:.91rem;color:var(--grey)}.path-arrow{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--fire)}
+.interactive{background:#f1ece5}.interactive-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.interactive-card{min-height:260px;padding:35px;border-radius:30px;border:1px solid var(--line);background:#fffdf9;display:flex;flex-direction:column;justify-content:space-between;transition:.25s}.interactive-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(60,45,35,.08)}.interactive-card.dark{background:var(--dark);color:#fff}.interactive-card.dark h2,.interactive-card.dark p{color:#fff}.interactive-icon{font-family:var(--serif);font-size:3.2rem;color:var(--gold);line-height:1}.interactive-card h2{font-family:var(--serif);font-size:2.25rem;font-weight:400;color:var(--ink);margin:12px 0 8px}.interactive-card p{font-size:.9rem;max-width:470px}.interactive-card a{color:var(--fire);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:500}
+.about{background:var(--cream)}.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:center}.about-photo{aspect-ratio:4/5;border-radius:34px;overflow:hidden;background:#e7ddd3}.about-photo img{width:100%;height:100%;object-fit:cover}.about-copy p{max-width:680px}.signature{font-family:var(--serif);font-style:italic;font-size:2rem;color:var(--plum);margin-top:20px}
+.closing{background:var(--dark);color:#fff8ef;text-align:center;padding:115px 24px;position:relative;overflow:hidden}.closing:before{content:'';position:absolute;width:560px;height:560px;border:1px solid rgba(212,175,55,.12);border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%)}.closing .wrap{position:relative;z-index:2}.closing .title{color:#fff8ef;max-width:700px;margin:0 auto;font-style:italic}.closing p{max-width:500px;margin:22px auto 30px;color:rgba(247,245,242,.65)}.closing-flame{width:85px;margin:0 auto 15px;filter:drop-shadow(0 0 18px rgba(225,179,92,.28))}.closing-flame img{width:100%;mix-blend-mode:screen}
+footer{background:#211a18;color:#cfc0b5;text-align:center;padding:25px;font-size:.73rem;letter-spacing:.04em}
+.reveal{opacity:0;transform:translateY(18px);transition:.7s ease}.reveal.visible{opacity:1;transform:none}
+@media(max-width:900px){.navlinks{display:none}.menu{display:block}.hero-grid,.about-grid{grid-template-columns:1fr}.hero-art{order:-1;min-height:500px}.hero-copy{text-align:center}.hero-copy .lead{margin-left:auto;margin-right:auto}.hero-actions{justify-content:center}.flame{width:145px;right:3%}.hero-note{left:4%;bottom:12px}.path-grid,.interactive-grid{grid-template-columns:1fr}.explore-head{display:block}.explore-head .lead{margin-top:15px}}
+@media(max-width:560px){.section{padding:78px 18px}.nav{padding:11px 18px}.brand-text{font-size:1.15rem}.brand-text small{display:none}.hero{padding:105px 18px 65px}.hero-art{min-height:420px}.orbit{width:340px;height:340px}.hero-photo{width:70%}.flame{width:105px}.hero-note{font-size:1rem;max-width:180px}.title{font-size:clamp(2.7rem,14vw,4rem)}.path{min-height:220px;padding:28px}.interactive-card{min-height:230px;padding:28px}.about-grid{gap:35px}}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.flame{animation:none}}
+</style>
+</head>
+<body>
+<header class="header">
+<nav class="nav">
+  <a class="brand" href="index.html" aria-label="Fuego Alquímico, inicio">
+    <span class="brand-mark"><img src="AVATAR_FUEGO_ELEMENTAL.jpg" alt=""></span>
+    <span class="brand-text">Fuego Alquímico<small>Hacia el encuentro contigo</small></span>
+  </a>
+  <div class="navlinks">
+    <a href="#camino">El camino</a>
+    <a href="#experiencias">Experiencias</a>
+    <a href="bitacora.html">Bitácora</a>
+    <a href="sobre-mi.html">Sobre mí</a>
+    <a href="contacto.html" class="nav-cta">Contacto</a>
+  </div>
+  <button class="menu" aria-label="Abrir menú">☰</button>
+</nav>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy reveal">
+      <p class="eyebrow">Fuego Alquímico</p>
+      <h1 class="hero-title">Hacia el<br><em>encuentro</em><br>contigo.</h1>
+      <p class="hero-sub">Un espacio para volver a ti.</p>
+      <p class="lead">Acompañamiento, experiencias y herramientas para explorar tu mundo interior, comprender tus procesos y abrir espacio a nuevas posibilidades.</p>
+      <div class="hero-actions">
+        <a class="btn btn-dark" href="#camino">Explorar el camino →</a>
+        <a class="btn btn-outline" href="quiz-diosas.html">Conocerme a través de las diosas</a>
+      </div>
+    </div>
+    <div class="hero-art reveal">
+      <div class="orbit"></div>
+      <div class="hero-photo"><img src="IMAGEN_HERO_JEANETT.jpg" alt="Jeanett Romero"></div>
+      <div class="flame"><img src="AVATAR_FUEGO_ELEMENTAL.jpg" alt="Elemento de fuego de Fuego Alquímico"></div>
+      <div class="hero-note"><small>Tu camino</small>Cada proceso tiene su propio ritmo.</div>
+    </div>
+  </div>
+</section>
+
+<div class="band"><div class="band-inner"><span>Acompañamiento</span><span>Experiencias</span><span>Bitácora</span><span>Creatividad</span><span>Recursos</span></div></div>
+
+<section id="camino" class="section explore">
+  <div class="wrap">
+    <div class="explore-head reveal">
+      <div><p class="eyebrow">Elige por dónde comenzar</p><h2 class="title">Un camino,<br>varias puertas.</h2></div>
+      <p class="lead">La primera página solo te muestra el mapa. Cada puerta te lleva a su propio espacio para que puedas conocerla con calma.</p>
+    </div>
+    <div class="path-grid">
+      <a class="path reveal" href="acompanamiento.html"><span class="path-number">01</span><div><span class="path-label">Acompañamiento</span><h2>Procesos 1:1</h2><p>Un espacio individual para comprender lo que estás viviendo y acompañar un proceso de transformación con presencia.</p></div><span class="path-arrow">Conocer los procesos →</span></a>
+      <a class="path reveal" href="tu-energia-habla.html"><span class="path-number">02</span><div><span class="path-label">Experiencia</span><h2>Tu Energía Habla</h2><p>Curso de Exploración Bioenergética con Radiestesia Pendular.</p></div><span class="path-arrow">Entrar a la experiencia →</span></a>
+      <a class="path reveal" href="bitacora.html"><span class="path-number">03</span><div><span class="path-label">Bitácora Atemporal</span><h2>Tu Círculo Sagrado</h2><p>Un mapa iniciático de autoconocimiento a través de cuatro arquetipos femeninos y un cierre de integración.</p></div><span class="path-arrow">Descubrir la Bitácora →</span></a>
+      <a class="path reveal" href="jrz-alquimia-creativa.html"><span class="path-number">04</span><div><span class="path-label">JRZ Alquimia Creativa</span><h2>Dar forma a tus ideas</h2><p>Un espacio diferente: proyectos, identidad y primeros pasos para llevar una idea al mundo.</p></div><span class="path-arrow">Conocer JRZ →</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="experiencias" class="section interactive">
+  <div class="wrap">
+    <div class="explore-head reveal"><div><p class="eyebrow">Explora e interactúa</p><h2 class="title">También puedes<br>jugar con el camino.</h2></div><p class="lead">Algunas experiencias no empiezan con una explicación. Empiezan con una pregunta, una imagen o una elección.</p></div>
+    <div class="interactive-grid">
+      <a class="interactive-card dark reveal" href="quiz-diosas.html"><div><div class="interactive-icon">◌</div><h2>Quiz de las Diosas</h2><p>Una experiencia interactiva para explorar qué arquetipo femenino puede estar acompañando tu momento actual.</p></div><span>Descubrir mi arquetipo →</span></a>
+      <a class="interactive-card reveal" href="recursos.html"><div><div class="interactive-icon">✦</div><h2>Recursos y experiencias</h2><p>Un espacio para reunir herramientas, propuestas y futuras experiencias interactivas de Fuego Alquímico.</p></div><span>Ver recursos →</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="section about" id="sobre-mi">
+  <div class="wrap about-grid">
+    <div class="about-photo reveal"><img src="IMAGEN_SOBRE_JEANETT.jpg" alt="Jeanett Romero"></div>
+    <div class="about-copy reveal"><p class="eyebrow">Sobre mí</p><h2 class="title">Jeanett Romero</h2><p class="lead" style="margin-top:22px">Terapeuta Biointegral y acompañante de procesos de transformación personal.</p><p class="lead">Este espacio reúne distintas formas de acompañamiento, aprendizaje y creación que nacen de mi propio camino y de los procesos que he acompañado.</p><a class="btn btn-outline" style="margin-top:15px" href="sobre-mi.html">Conocer mi recorrido →</a><div class="signature">Jeanett</div></div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <div class="closing-flame"><img src="AVATAR_FUEGO_ELEMENTAL.jpg" alt=""></div>
+    <p class="eyebrow">Fuego Alquímico</p>
+    <h2 class="title">A veces el siguiente paso no es ir más lejos.<br>Es volver hacia ti.</h2>
+    <p>Explora las puertas que resuenen contigo y entra en cada espacio a tu propio ritmo.</p>
+    <a class="btn btn-gold" href="contacto.html">Encontrarnos →</a>
+  </div>
+</section>
+</main>
+<footer>Fuego Alquímico · Jeanett Romero · Hacia el encuentro contigo</footer>
+<script>
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.1});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
