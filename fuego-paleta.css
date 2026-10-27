@@ -1,0 +1,35 @@
+/* Fuego Alquímico · Paleta de Fuego Alquímico */
+:root{--cream:#F7F2EA;--cream2:#ECE6DC;--paper:#FBF8F2;--dark:#B8472B;--ink:#3A2E28;--grey:#60554F;--gold:#A9683F;--gold2:#A9683F;--fire:#B8472B;--plum:#3A2E28;--teal:#56624D;--line:rgba(184,71,43,.22)}
+body{background:#F7F2EA;color:#3A2E28}
+.btn-dark,.btn-jrz,.btn-main{background:#B8472B!important;color:#F7F2EA!important}
+.btn-cur{background:#56624D!important;color:#F7F2EA!important}
+.btn-outline{border-color:#3A2E28;color:#3A2E28}
+.num{background:#56624D!important}
+.mcta{background:#B8472B!important;color:#F7F2EA!important}
+.interactive-card.dark{background:linear-gradient(135deg,#EBCFC0,#DDB4A1)!important;color:#3A2E28!important;border-color:rgba(184,71,43,.35)!important}
+.interactive-card.dark h2,.interactive-card.dark p,.interactive-card.dark .interactive-icon{color:#3A2E28!important}
+.interactive-card.dark span{color:#B8472B!important}
+.pg-hero{position:relative}
+.pg-hero::before{content:'';position:absolute;top:88px;right:max(22px,calc(50% - 590px));width:46px;height:46px;background:url(ICONO_FUEGO_ALQUIMICO.png) center/contain no-repeat;opacity:.75;pointer-events:none}
+.recursos .pg-hero,.faqp .pg-hero{background:linear-gradient(135deg,#F7F2EA,#ECE6DC 60%,#D3D8C6)}
+.contacto .pg-hero{background:linear-gradient(135deg,#F7F2EA,#ECE6DC 55%,#EEDCD0)}
+.curso .pg-hero{background:radial-gradient(circle at 85% 18%,rgba(211,216,198,.75),transparent 34%),linear-gradient(135deg,#F7F2EA,#EDEFE3 60%,#E1E5D3)}
+.curso .closing{background:linear-gradient(135deg,#E3E7D8,#D3D8C6)!important}
+.curso .closing:before{border-color:rgba(86,98,77,.3)}
+.jrz .pg-hero{background:radial-gradient(circle at 84% 20%,rgba(86,98,77,.16),transparent 30%),linear-gradient(135deg,#F7F2EA,#EEDCD0)}
+@media(max-width:780px){.pg-hero::before{width:34px;height:34px;top:78px;right:18px}}
+.hero2 .himg{height:auto!important;aspect-ratio:auto}
+.pg-hero.has-img::before{display:none!important}
+.navlinks{gap:16px!important}
+.navlinks a{white-space:nowrap;font-size:.84rem!important}
+.totop{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));width:46px;height:46px;border-radius:50%;border:1.5px solid rgba(184,71,43,.5);background:#F7F2EA;color:#B8472B;font-size:1.3rem;line-height:1;cursor:pointer;z-index:140;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .3s,transform .3s,visibility .3s,background .2s;box-shadow:0 8px 22px rgba(58,46,40,.18)}
+.totop.show{opacity:1;visibility:visible;transform:none}
+.totop:hover,.totop:focus-visible{background:#B8472B;color:#F7F2EA}
+body.mcta-on .totop{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+@media(prefers-reduced-motion:reduce){.totop{transition:none}}
+.no-io .reveal{opacity:1!important;transform:none!important}
+.badges{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.badge{display:inline-block;padding:4px 12px;border-radius:999px;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;color:#3A2E28}
+.badge.free{background:#D3D8C6}
+.badge.paid{background:#DDB4A1}
+.hero-sub,.hero-ritmo,.bio-role,.closing .eyebrow,.acc .sub,.feat .sub,.svc .sub,.deal,.jrz .eyebrow,.jrz .closing .eyebrow,.jrz .acc .sub{color:#B8472B}
