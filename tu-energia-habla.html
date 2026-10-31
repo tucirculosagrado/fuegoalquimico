@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.className+=' js';if(!('IntersectionObserver' in window))document.documentElement.className+=' no-io'</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preload" href="fonts/cormorant-garamond-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="fonts/cormorant-garamond-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="fonts/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin><style>/*fuentes*/@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300;font-display:swap;src:url(fonts/cormorant-garamond-latin-300-normal.woff2) format('woff2')}@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/cormorant-garamond-latin-400-normal.woff2) format('woff2')}@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/cormorant-garamond-latin-500-normal.woff2) format('woff2')}@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/cormorant-garamond-latin-600-normal.woff2) format('woff2')}@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:300;font-display:swap;src:url(fonts/cormorant-garamond-latin-300-italic.woff2) format('woff2')}@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:swap;src:url(fonts/cormorant-garamond-latin-400-italic.woff2) format('woff2')}@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500;font-display:swap;src:url(fonts/cormorant-garamond-latin-500-italic.woff2) format('woff2')}@font-face{font-family:'Jost';font-style:normal;font-weight:300;font-display:swap;src:url(fonts/jost-latin-300-normal.woff2) format('woff2')}@font-face{font-family:'Jost';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/jost-latin-400-normal.woff2) format('woff2')}@font-face{font-family:'Jost';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/jost-latin-500-normal.woff2) format('woff2')}@font-face{font-family:'Jost';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/jost-latin-600-normal.woff2) format('woff2')}</style>
+<link rel="stylesheet" href="fuego-base.css?v=2">
+<link rel="stylesheet" href="fuego-paginas.css?v=2">
+<style>
+body.curso{--c1:#D3D8C6;--c2:#56624D;--c3:#A9683F}
+.btn-cur{background:linear-gradient(135deg,var(--c1),var(--c2));color:#fff}
+.btn-cur:hover{filter:brightness(1.06);transform:translateY(-2px)}
+.curso .pg-hero{background:radial-gradient(circle at 85% 18%,rgba(86,98,77,.25),transparent 30%),radial-gradient(circle at 92% 82%,rgba(211,216,198,.25),transparent 28%),linear-gradient(135deg,#F7F2EA,#EDEFE3 60%,#E1E5D3)}
+.curso .pg-hero:after{border:2px dashed rgba(86,98,77,.6);box-shadow:0 0 0 36px rgba(255,255,255,.4),0 0 0 37px rgba(211,216,198,.45);animation:spin 60s linear infinite}
+@keyframes spin{to{transform:translateY(-42%) rotate(360deg)}}
+.curso .pg-hero .title em,.curso .eyebrow{color:var(--c2)}
+.curso .hero-sub{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--c2);margin:14px 0 0}
+.hello{font-family:var(--serif);font-style:italic;font-size:1.45rem;color:var(--ink);margin:26px 0 0}
+.pg-hero .lead{margin-top:12px}
+.moons{font-size:1.7rem;letter-spacing:.6rem;margin-top:28px}
+.ways{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:36px}
+.way{padding:34px;border-radius:28px;border:1px solid var(--line);background:#FBF8F2}
+.way.hi{background:linear-gradient(135deg,#E3E7D8,#D3D8C6);border-color:rgba(86,98,77,.35)}
+.way h3{font-family:var(--serif);font-size:1.9rem;font-weight:400;color:var(--ink);margin:10px 0}
+.way p{margin:0}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}
+.pillar{padding:32px 28px;border-radius:28px;border:1px solid var(--line);background:#FBF8F2;border-top:4px solid var(--c1)}
+.pillar:nth-child(2){border-top-color:var(--c2)}
+.pillar:nth-child(3){border-top-color:var(--c3)}
+.pillar .ic{font-size:1.9rem}
+.pillar h3{font-family:var(--serif);font-size:1.8rem;font-weight:400;color:var(--ink);margin:6px 0 14px}
+.pillar ul{padding-left:18px;margin:0;font-size:.94rem}
+.pillar li{margin-bottom:9px}
+.pbox{padding:28px 34px;border-radius:26px;background:linear-gradient(135deg,#E3E7D8,#D3D8C6);margin:34px 0 26px}
+.pbox h3{font-family:var(--serif);font-size:1.9rem;font-weight:400;color:var(--ink);margin:0 0 6px}
+.pbox p{margin:0}
+.sess{display:flex;flex-direction:column;gap:10px}
+.ses{border:1px solid var(--line);border-radius:22px;background:#FBF8F2;overflow:hidden;transition:box-shadow .3s}
+.ses[open]{box-shadow:0 16px 36px rgba(86,98,77,.14)}
+.ses summary,.ses .row{list-style:none;display:grid;grid-template-columns:48px 1fr auto;gap:18px;align-items:center;padding:18px 24px}
+.ses summary{cursor:pointer}
+.ses summary::-webkit-details-marker{display:none}
+.ses summary:after{content:'+';font-size:1.5rem;color:var(--c2)}
+.ses[open] summary:after{content:'−'}
+.num{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font:1.5rem var(--serif);color:#fff;background:linear-gradient(135deg,var(--c1),var(--c2))}
+.ses h3{font-family:var(--serif);font-size:1.6rem;font-weight:400;color:var(--ink);margin:0;line-height:1.1}
+.ses h3 span{margin-right:8px}
+.ses .sub{font-size:.9rem;margin:3px 0 0}
+.ses .body{padding:0 24px 22px 90px;font-size:.95rem;margin:0}
+.fit{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:36px}
+.fit h3{font-family:var(--serif);font-size:1.7rem;font-weight:400;color:var(--ink);margin:0 0 16px}
+.fit ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.chk{text-align:left;width:100%;padding:14px 18px;border-radius:16px;border:1px solid var(--line);background:#FBF8F2;cursor:pointer;color:var(--grey);transition:.25s;font-size:.95rem}
+.chk:before{content:'○  ';color:var(--c2)}
+.chk:hover{border-color:rgba(86,98,77,.5)}
+.chk[aria-pressed=true]{background:linear-gradient(135deg,#E3E7D8,#D3D8C6);border-color:rgba(86,98,77,.5);color:var(--ink)}
+.chk[aria-pressed=true]:before{content:'✓  '}
+.notn li{padding:14px 18px;border:1px dashed rgba(90,90,90,.28);border-radius:16px;font-size:.95rem}
+.fit-res{margin-top:18px;font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--c2);min-height:2em}
+.incg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
+.incx{display:flex;gap:16px;align-items:center;padding:20px 22px;border-radius:20px;border:1px solid var(--line);background:#FBF8F2;font-size:.95rem;transition:transform .3s}
+.incx:hover{transform:translateY(-4px)}
+.incx span{font-size:1.7rem}
+.fac{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding:28px 34px;border-radius:26px;background:linear-gradient(135deg,#FBF8F2,#ECE6DC);border:1px solid var(--line)}
+.fac b{font-family:var(--serif);font-size:1.8rem;font-weight:400;color:var(--ink);display:block;line-height:1.1}
+.fac small{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--c2)}
+.curso .closing{background:radial-gradient(circle at 18% 20%,rgba(255,255,255,.55),transparent 42%),linear-gradient(135deg,#E3E7D8,#D3D8C6 58%,#DDE2CE)}
+.curso .closing:before{border-color:rgba(86,98,77,.3)}
+.mods{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:0 0 26px}
+.mods span{padding:8px 16px;border-radius:999px;background:rgba(255,255,255,.7);border:1px solid rgba(86,98,77,.3);font-size:.78rem;color:#56624D}
+.tesla{font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--ink);margin:36px auto 0;max-width:560px}
+.tesla small{display:block;font-family:var(--sans);font-style:normal;font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:#56624D;margin-top:6px}
+@media(max-width:1000px){.pillars,.incg{grid-template-columns:1fr 1fr}}
+@media(max-width:780px){.ways,.fit,.pillars,.incg{grid-template-columns:1fr}.ses .body{padding-left:24px}.ses summary,.ses .row{grid-template-columns:42px 1fr auto;gap:12px;padding:16px 18px}.moons{letter-spacing:.35rem}}
+@media(prefers-reduced-motion:reduce){.curso .pg-hero:after{animation:none}}
+.note-limit{max-width:820px;margin:18px 0 0;font-size:.92rem;color:var(--grey)}
+</style>
+<link rel="stylesheet" href="fuego-ajustes.css?v=2">
+<style>
+:root{--cream:#F7F2EA;--cream2:#ECE6DC;--paper:#FBF8F2;--dark:#B8472B;--ink:#3A2E28;--grey:#60554F;--gold:#A9683F;--gold2:#A9683F;--fire:#B8472B;--plum:#3A2E28;--teal:#56624D;--line:rgba(184,71,43,.22)}
+body{background:#F7F2EA;color:#3A2E28}
+.btn-dark,.btn-jrz,.btn-main{background:#B8472B!important;color:#F7F2EA!important}
+.btn-cur{background:#56624D!important;color:#F7F2EA!important}
+.btn-outline{border-color:#3A2E28;color:#3A2E28}
+.num{background:#56624D!important}
+.mcta{background:#B8472B!important;color:#F7F2EA!important}
+.interactive-card.dark{background:linear-gradient(135deg,#EBCFC0,#DDB4A1)!important;color:#3A2E28!important;border-color:rgba(184,71,43,.35)!important}
+.interactive-card.dark h2,.interactive-card.dark p,.interactive-card.dark .interactive-icon{color:#3A2E28!important}
+.interactive-card.dark span{color:#B8472B!important}
+.pg-hero{position:relative}
+.pg-hero::before{content:'';position:absolute;top:88px;right:max(22px,calc(50% - 590px));width:46px;height:46px;background:url(ICONO_FUEGO_ALQUIMICO.png) center/contain no-repeat;opacity:.75;pointer-events:none}
+.recursos .pg-hero,.faqp .pg-hero{background:linear-gradient(135deg,#F7F2EA,#ECE6DC 60%,#D3D8C6)}
+.contacto .pg-hero{background:linear-gradient(135deg,#F7F2EA,#ECE6DC 55%,#EEDCD0)}
+.curso .pg-hero{background:radial-gradient(circle at 85% 18%,rgba(211,216,198,.75),transparent 34%),linear-gradient(135deg,#F7F2EA,#EDEFE3 60%,#E1E5D3)}
+.curso .closing{background:linear-gradient(135deg,#E3E7D8,#D3D8C6)!important}
+.curso .closing:before{border-color:rgba(86,98,77,.3)}
+.jrz .pg-hero{background:radial-gradient(circle at 84% 20%,rgba(86,98,77,.16),transparent 30%),linear-gradient(135deg,#F7F2EA,#EEDCD0)}
+@media(max-width:780px){.pg-hero::before{width:34px;height:34px;top:78px;right:18px}}
+.hero2 .himg{height:auto!important;aspect-ratio:auto}
+.pg-hero.has-img::before{display:none!important}
+.navlinks{gap:16px!important}
+.navlinks a{white-space:nowrap;font-size:.84rem!important}
+.totop{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));width:46px;height:46px;border-radius:50%;border:1.5px solid rgba(184,71,43,.5);background:#F7F2EA;color:#B8472B;font-size:1.3rem;line-height:1;cursor:pointer;z-index:140;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .3s,transform .3s,visibility .3s,background .2s;box-shadow:0 8px 22px rgba(58,46,40,.18)}
+.totop.show{opacity:1;visibility:visible;transform:none}
+.totop:hover,.totop:focus-visible{background:#B8472B;color:#F7F2EA}
+body.mcta-on .totop{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+@media(prefers-reduced-motion:reduce){.totop{transition:none}}
+.no-io .reveal{opacity:1!important;transform:none!important}
+.badges{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.badge{display:inline-block;padding:4px 12px;border-radius:999px;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;color:#3A2E28}
+.badge.free{background:#D3D8C6}
+.badge.paid{background:#DDB4A1}
+.hero-sub,.hero-ritmo,.bio-role,.closing .eyebrow,.acc .sub,.feat .sub,.svc .sub,.deal,.jrz .eyebrow,.jrz .closing .eyebrow,.jrz .acc .sub{color:#B8472B}
+</style>
+<title>Curso de Radiestesia Pendular online · Tu Energía Habla</title>
+<meta name="description" content="Curso online de radiestesia pendular: 8 sesiones en vivo, 33 gráficos y un sistema de exploración personal. Pide información.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="author" content="Jeanett Romero Zurita">
+<meta name="theme-color" content="#F7F2EA">
+<link rel="canonical" href="https://fuegoalquimico.com/tu-energia-habla.html">
+<link rel="alternate" hreflang="es" href="https://fuegoalquimico.com/tu-energia-habla.html">
+<link rel="alternate" type="text/plain" href="https://fuegoalquimico.com/llms.txt" title="Resumen para asistentes de IA">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fuego Alquímico">
+<meta property="og:locale" content="es_LA">
+<meta property="og:title" content="Curso de Radiestesia Pendular online · Tu Energía Habla">
+<meta property="og:description" content="Curso online de radiestesia pendular: 8 sesiones en vivo, 33 gráficos y un sistema de exploración personal. Pide información.">
+<meta property="og:url" content="https://fuegoalquimico.com/tu-energia-habla.html">
+<meta property="og:image" content="https://fuegoalquimico.com/og-fuegoalquimico.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Curso de Radiestesia Pendular online · Tu Energía Habla">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Curso de Radiestesia Pendular online · Tu Energía Habla">
+<meta name="twitter:description" content="Curso online de radiestesia pendular: 8 sesiones en vivo, 33 gráficos y un sistema de exploración personal. Pide información.">
+<meta name="twitter:image" content="https://fuegoalquimico.com/og-fuegoalquimico.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","ProfessionalService"],"@id":"https://fuegoalquimico.com/#org","name":"Fuego Alquímico","url":"https://fuegoalquimico.com/","logo":{"@type":"ImageObject","url":"https://fuegoalquimico.com/LOGO_FUEGO_ALQUIMICO.png"},"image":"https://fuegoalquimico.com/og-fuegoalquimico.jpg","description":"Acompañamiento online, Bitácora Atemporal, curso Tu Energía Habla y mentoría de proyectos de JRZ Alquimia Creativa.","sameAs":["https://instagram.com/fuegoalquimico","https://instagram.com/jrzalquimiacreativa"],"founder":{"@id":"https://fuegoalquimico.com/#jeanett"},"areaServed":"Online","availableLanguage":"es","contactPoint":{"@type":"ContactPoint","contactType":"customer support","telephone":"+58-412-3791495","url":"https://wa.me/584123791495","availableLanguage":"es"}},{"@type":"Person","@id":"https://fuegoalquimico.com/#jeanett","name":"Jeanett Romero Zurita","jobTitle":"Terapeuta biointegral","url":"https://fuegoalquimico.com/sobre-mi.html","worksFor":{"@id":"https://fuegoalquimico.com/#org"},"knowsAbout":["Reiki","Biodescodificación","Flores de Bach","Radiestesia terapéutica","Técnica de Liberación Emocional","Terapia de Respuesta Espiritual","Acompañamiento de procesos personales"],"knowsLanguage":"es","sameAs":["https://instagram.com/fuegoalquimico"]},{"@type":"WebSite","@id":"https://fuegoalquimico.com/#website","url":"https://fuegoalquimico.com/","name":"Fuego Alquímico","inLanguage":"es","publisher":{"@id":"https://fuegoalquimico.com/#org"}},{"@type":"Course","name":"Tu Energía Habla: curso de radiestesia pendular","description":"Curso online de radiestesia pendular con 8 sesiones en vivo y un sistema de 33 gráficos para la exploración personal.","url":"https://fuegoalquimico.com/tu-energia-habla.html","inLanguage":"es","provider":{"@id":"https://fuegoalquimico.com/#org"},"instructor":{"@id":"https://fuegoalquimico.com/#jeanett"},"hasCourseInstance":{"@type":"CourseInstance","courseMode":"online"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://fuegoalquimico.com/"},{"@type":"ListItem","position":2,"name":"Tu Energía Habla","item":"https://fuegoalquimico.com/tu-energia-habla.html"}]}]}</script>
+<link rel="stylesheet" href="fuego-tipografia.css?v=2">
+</head>
+<body class="curso">
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="prog" id="prog"></div>
+<header class="header">
+<nav class="nav">
+  <a class="brand" href="index.html" aria-label="Fuego Alquímico, inicio">
+    <span class="brand-mark"><img src="ICONO_FUEGO_ALQUIMICO.webp" alt="" width="38" height="38"></span>
+    <span class="brand-text">Fuego Alquímico<small>Hacia el encuentro contigo</small></span>
+  </a>
+  <div class="navlinks"><a href="index.html">Inicio</a><a href="acompanamiento.html">Acompañamiento</a><a href="tu-energia-habla.html" class="on" aria-current="page">Tu Energía Habla</a><div class="dd"><a href="bitacora.html">Bitácora</a><div class="dd-menu"><a href="bitacora.html#bf-umbral">El umbral</a><a href="bitacora.html#bf-portales">Los portales</a><a href="bitacora.html#bf-compra">Qué incluye</a><a href="bitacora.html#bf-arq">Arquitectura</a><a href="bitacora.html#bf-biblio">Bibliografía</a><a href="bitacora.html#bf-faq">Preguntas</a></div></div><a href="jrz-alquimia-creativa.html">Mentoría de proyectos</a><div class="dd"><a href="recursos.html">Recursos</a><div class="dd-menu"><a href="recursos.html#carta">Tu carta de hoy</a><a href="recursos.html#pausa">Un minuto de pausa</a><a href="recursos.html#primer-paso">De la idea al primer paso</a><a href="quiz-diosas.html">Quiz de las diosas</a><a href="test-energetico.html">Test bioenergético exprés</a></div></div><a href="sobre-mi.html">Sobre mí</a><a href="contacto.html" class="nav-cta">Contacto</a></div>
+  <button class="menu" aria-label="Abrir menú">☰</button>
+</nav>
+</header>
+<main id="contenido">
+<section class="pg-hero has-img"><div class="wrap hero2 reveal"><div><p class="eyebrow">✦ Exploración bioenergética pendular ✦</p><h1 class="title">Tu Energía<br><em>Habla</em></h1><p class="hero-sub">El péndulo no adivina el futuro, traduce lo que tu energía ya sabe.</p><p class="lead">Aprende a usar la radiestesia como una brújula práctica para tu vida diaria: sin mitos, sin adornos y con la neutralidad de quien busca respuestas claras en medio del ruido.</p><div class="acts"><a class="btn btn-cur" href="https://wa.me/584123791495?text=Hola%20Jeanett,%20estoy%20interesado/a%20en%20el%20curso%20Tu%20Energ%C3%ADa%20Habla" target="_blank" rel="noopener">Comienza tu transformación →</a><a class="btn btn-outline" href="#programa">Ver el programa</a></div><ul class="chips"><li>8 sesiones en vivo</li><li>33 gráficos</li><li>Online</li></ul></div><img class="himg" src="IMAGEN_TU_ENERGIA_HABLA.jpg" alt="Mesa de trabajo con un péndulo de cristal sobre un gráfico de radiestesia, libros y herramientas" width="1024" height="930"></div></section>
+
+<section class="section"><div class="wrap"><div class="reveal"><p class="eyebrow">Antes de continuar</p><h2 class="title sec-title">Una aclaratoria<br>importante</h2><p class="lead" style="margin-top:20px">Si lo que quieres es aprender a utilizar el Péndulo, cómo funciona, sus movimientos y para qué lo puedes utilizar está bien, te lo puedo enseñar en 5 horas o menos.</p></div>
+<div class="ways"><div class="way reveal"><span class="tag">Pero si</span><h3>Lo que quieres en realidad es aprender una herramienta o técnica que te apoye en conocerte mejor.</h3></div>
+<div class="way hi reveal"><span class="tag">Este curso</span><h3>Es un sistema</h3><p>Una herramienta que te apoye en conocerte mejor, a explorar tus emociones, miedos y sentimientos, a soltar el juicio y la crítica, a ser neutral y objetivo ante las situaciones, personas y la vida, y a explorar la energía del universo y los mundos sutiles. Todo es frecuencia y vibración: este curso fue diseñado para ti.</p></div></div>
+<p class="pull reveal" style="margin-top:40px;max-width:820px;border-color:var(--c2)">“Tu Energía Habla” no es un simple curso de péndulo: es un Sistema de Navegación donde utilizas gráficos y el péndulo para explorar tu mundo interior y exterior. El péndulo es el lápiz o tu varita de conexión y los gráficos la guía para que puedas interpretar lo que ya sabes o intuyes.</p><p class="note-limit reveal">El péndulo es una herramienta de exploración personal.</p></div></section>
+
+<section class="section alt"><div class="wrap"><div class="reveal"><p class="eyebrow">¿Qué vas a lograr?</p><h2 class="title sec-title">Aprenderás a escuchar<br>a tu alma</h2><p class="lead" style="margin-top:20px">No solo a usar un péndulo.</p></div><div class="pillars"><div class="pillar reveal"><div class="ic">🌟</div><h3>Dominio técnico</h3><ul><li>Usar el péndulo con confianza y neutralidad</li><li>Navegar el sistema de 33 gráficos con claridad</li><li>Reconocer emociones y patrones que quieras observar con más calma</li><li>Explorar, desde el enfoque del curso, miedos, creencias y vínculos con vidas pasadas</li></ul></div><div class="pillar reveal"><div class="ic">💎</div><h3>Conocimiento profundo</h3><ul><li>Entender tu estructura energética completa</li><li>Explorar cuerpos sutiles, arquetipos, programas del alma</li><li>Practicar un protocolo completo de exploración y cierre de sesión</li><li>Conectar con tu intuición y voz interior</li></ul></div><div class="pillar reveal"><div class="ic">🌿</div><h3>Autonomía y práctica</h3><ul><li>Sistema de autoexploración continua que puedes usar solo</li><li>Sentar las bases para acompañar a otros</li><li>Herramienta de por vida para tu desarrollo personal</li><li>Protocolo personal listo para usar cuando quieras</li></ul></div></div></div></section>
+
+<section class="section" id="programa"><div class="wrap"><div class="reveal"><p class="eyebrow">Programa del curso</p><h2 class="title sec-title">8 sesiones, 33 gráficos,<br>un camino de autoexploración</h2></div>
+<div class="pbox reveal"><h3>🔥 Tu camino de transformación</h3><p>Un sistema completo de autoexploración. En ocho sesiones aprenderás a usar el péndulo con confianza, a calibrar tu propio lenguaje energético y a explorar tu campo emocional, las estructuras de tu alma y las capas más profundas de tu Ser, con un sistema claro y estructurado de principio a fin.</p></div>
+<div class="sess"><details class="ses reveal"><summary><div class="num">1</div><div><h3><span>🌑</span>El Umbral</h3><p class="sub">El principio de todo: qué somos, de dónde viene esta herramienta y cómo hablar con ella</p></div></summary><p class="body">La primera sesión abre el espacio. Antes de tocar un gráfico, necesitas entender por qué esta herramienta tiene sentido, y qué está pasando realmente cuando sostienes un péndulo en la mano.</p></details><details class="ses reveal"><summary><div class="num">2</div><div><h3><span>🌓</span>El Canal</h3><p class="sub">Lo que los gráficos no pueden enseñarte: confiar, sentir y preguntar desde la neutralidad</p></div></summary><p class="body">La sesión más interior del módulo. Antes de ir a los gráficos, trabajamos lo que ningún sistema puede darte desde afuera: aprender a salir del juicio, abrir el canal y preguntar desde un lugar limpio.</p></details><details class="ses reveal"><summary><div class="num">3</div><div><h3><span>🌕</span>El Mapa</h3><p class="sub">Los cuerpos sutiles y el campo emocional completo</p></div></summary><p class="body">Aquí el sistema empieza a desplegarse. Primero completamos el mapa del Ser, las capas energéticas que el péndulo puede explorar. Luego trabajamos los primeros gráficos del estado emocional.</p></details><details class="ses reveal"><summary><div class="num">4</div><div><h3><span>🌟</span>El Sistema</h3><p class="sub">Los gráficos de respuesta, recursos y cierre, y la primera sesión completa</p></div></summary><p class="body">La sesión más práctica del módulo. El resto es práctica pura, cada alumno hace su primera sesión completa de principio a fin solo.</p></details><div class="ses reveal"><div class="row"><div class="num">5</div><div><h3><span>🌿</span>Las Estructuras del Alma</h3><p class="sub">Las capas completas del Ser, la asistencia espiritual, las virtudes y los aprendizajes que el Alma trajo</p></div><span></span></div></div><div class="ses reveal"><div class="row"><div class="num">6</div><div><h3><span>🌀</span>Las Raíces</h3><p class="sub">Los programas del alma, los compromisos de vidas pasadas y los patrones que nos habitan</p></div><span></span></div></div><div class="ses reveal"><div class="row"><div class="num">7</div><div><h3><span>⚡</span>Las Sombras</h3><p class="sub">Las energías que interfieren, los bloqueos en el campo y los programas más profundos del ser</p></div><span></span></div></div><div class="ses reveal"><div class="row"><div class="num">8</div><div><h3><span>🌟</span>El Sistema Completo</h3><p class="sub">Los gráficos de armonización y cierre, y la primera sesión con el sistema entero</p></div><span></span></div></div></div></div></section>
+
+<section class="section alt"><div class="wrap"><div class="reveal"><p class="eyebrow">¿Es para ti?</p><h2 class="title sec-title">Este curso es para ti si…</h2></div>
+<div class="fit"><div><ul><li><button class="chk" aria-pressed="false">Sientes que hay algo más en ti que quiere sanar</button></li><li><button class="chk" aria-pressed="false">Tienes patrones que se repiten y no entiendes por qué</button></li><li><button class="chk" aria-pressed="false">Quieres herramientas prácticas para explorar tus propios bloqueos</button></li><li><button class="chk" aria-pressed="false">Estás lista/o para conectar con tu sabiduría interior</button></li><li><button class="chk" aria-pressed="false">Sueñas con poder acompañar a otros desde un lugar auténtico</button></li><li><button class="chk" aria-pressed="false">Eres terapeuta y quieres ampliar tus herramientas</button></li></ul><p class="fit-res" id="fitres" aria-live="polite">Marca lo que resuene contigo.</p></div><div class="reveal"><h3>No es necesario que…</h3><ul class="notn"><li>Tengas experiencia previa con péndulo o radiestesia</li><li>Tengas conocimientos de energía o metafísica</li><li>Haber tomado ningún curso previo relacionado con el tema</li><li>Ser terapeuta</li></ul><p class="pull" style="margin-top:22px;font-size:1.35rem;border-color:var(--c2)">Solo necesitas apertura y disposición a encontrarte contigo.</p></div></div></div></section>
+
+<section class="section"><div class="wrap"><div class="reveal"><p class="eyebrow">¿Qué incluye?</p><h2 class="title sec-title">Todo lo que necesitas<br>para tu transformación</h2></div><div class="incg"><div class="incx reveal"><span>🎥</span>Sesiones en vivo de 2 o 4 horas semanales (a convenir)</div><div class="incx reveal"><span>📹</span>Acceso a grabación de cada sesión</div><div class="incx reveal"><span>📚</span>Manual completo del alumno</div><div class="incx reveal"><span>📓</span>Cuaderno de trabajo digital</div><div class="incx reveal"><span>📖</span>Glosario completo del sistema</div><div class="incx reveal"><span>🗺️</span>33 gráficos del sistema en formato digital</div><div class="incx reveal"><span>💬</span>Acompañamiento por WhatsApp</div><div class="incx reveal"><span>🎓</span>Certificado digital al completar</div><div class="incx reveal"><span>🔄</span>Encuentros mensuales de seguimiento (1 mensual × 2 meses)</div></div>
+<div class="fac reveal" style="margin-top:34px"><div><small>Facilitadora</small><b>Jeanett Romero Zurita</b><span>Terapeuta biointegral</span></div><a class="btn btn-outline" href="sobre-mi.html">Conocer mi recorrido →</a></div></div></section>
+
+<section class="closing"><div class="wrap"><div class="mods"><span>Sesiones online en vivo</span><span>Fechas a convenir</span></div><p class="eyebrow">¿Quieres más información?</p><h2 class="title">¿Listo para escuchar tu energía?</h2>
+<p>El péndulo no sabe más que tú; simplemente es el puente que te permite ver lo que tu alma ya sabe y aún no te has atrevido a escuchar.</p><p style="margin-top:-8px">Recuerda que el autoconocimiento no es un destino al cual llegar, sino el sagrado hábito de caminar hacia adentro con respeto, calma y curiosidad.</p>
+<a class="btn btn-cur" href="https://wa.me/584123791495?text=Hola%20Jeanett,%20estoy%20interesado/a%20en%20el%20curso%20Tu%20Energ%C3%ADa%20Habla" target="_blank" rel="noopener">Escríbeme por WhatsApp →</a><p class="tesla">“Si quieres encontrar los secretos del universo, piensa en términos de energía, frecuencia y vibración.”<small>Nikola Tesla</small></p></div></section>
+</main>
+<a class="mcta" id="mcta" href="https://wa.me/584123791495?text=Hola%20Jeanett,%20estoy%20interesado/a%20en%20el%20curso%20Tu%20Energ%C3%ADa%20Habla" target="_blank" rel="noopener">Quiero más información</a>
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <a class="brand" href="index.html" aria-label="Fuego Alquímico, inicio"><span class="brand-text">Fuego Alquímico</span></a>
+        <p>Acompañamiento, experiencias y herramientas para explorar tu mundo interior.</p>
+      </div>
+      <nav class="f-col" aria-label="Explora"><h3>Explora</h3><a href="acompanamiento.html">Acompañamiento</a><a href="tu-energia-habla.html">Tu Energía Habla</a><a href="bitacora.html">Bitácora Atemporal</a><a href="jrz-alquimia-creativa.html">Mentoría de proyectos</a><a href="quiz-diosas.html">Quiz de las Diosas</a><a href="test-energetico.html">Test bioenergético</a><a href="recursos.html">Recursos</a><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></nav>
+      <nav class="f-col" aria-label="Jeanett"><h3>Jeanett</h3><a href="sobre-mi.html">Sobre mí</a><a href="contacto.html">Contacto</a><a href="https://calendly.com/tucirculosagrado" target="_blank" rel="noopener">Agenda una conversación</a></nav>
+      <div class="f-col"><h3>Sígueme</h3><a href="https://instagram.com/fuegoalquimico" target="_blank" rel="noopener">@fuegoalquimico</a><a href="https://instagram.com/jrzalquimiacreativa" target="_blank" rel="noopener">@jrzalquimiacreativa</a><a href="https://wa.me/584123791495" target="_blank" rel="noopener">WhatsApp</a></div>
+    </div>
+    <div class="f-base"><span>© 2026 Fuego Alquímico · Jeanett Romero</span><span>El acompañamiento no sustituye la atención médica o psicológica.</span></div>
+  </div>
+</footer>
+<script>
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.1});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const mb=document.querySelector('.menu'),nl=document.querySelector('.navlinks');if(mb&&nl){mb.addEventListener('click',()=>mb.setAttribute('aria-expanded',nl.classList.toggle('open')));nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nl.classList.remove('open');mb.setAttribute('aria-expanded','false')}))}
+const pr=document.getElementById('prog'),mc=document.getElementById('mcta'),cl=document.querySelector('.closing');addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight;pr.style.width=(h>0?scrollY/h*100:0)+'%';mc.classList.toggle('show',scrollY>600&&cl.getBoundingClientRect().top>innerHeight*.8)},{passive:true});
+const fr=document.getElementById('fitres');document.querySelectorAll('.chk').forEach(b=>b.addEventListener('click',()=>{b.setAttribute('aria-pressed',b.getAttribute('aria-pressed')!=='true');const n=document.querySelectorAll('.chk[aria-pressed=true]').length;fr.textContent=n===0?'Marca lo que resuene contigo.':n===1?'Ya hay una puerta abierta.':'Si resuenas con dos o más, este curso fue diseñado para ti.'}));
+</script>
+<button class="totop" id="totop" type="button" aria-label="Volver arriba">↑</button>
+<script>(function(){var b=document.getElementById('totop');if(!b)return;var m=document.getElementById('mcta');function u(){b.classList.toggle('show',scrollY>700);document.body.classList.toggle('mcta-on',!!(m&&m.classList.contains('show')))}addEventListener('scroll',u,{passive:true});u();b.addEventListener('click',function(){scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'})})})();</script>
+<script>document.addEventListener('keydown',function(e){if(e.key!=='Escape')return;var n=document.querySelector('.navlinks'),m=document.querySelector('.menu');if(n&&m&&n.classList.contains('open')){n.classList.remove('open');m.setAttribute('aria-expanded','false');m.focus()}});</script>
+</body></html>

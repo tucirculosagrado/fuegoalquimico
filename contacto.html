@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<script>document.documentElement.className+=' js';if(!('IntersectionObserver' in window))document.documentElement.className+=' no-io'</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preload" href="fonts/cormorant-garamond-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="fonts/cormorant-garamond-latin-400-italic.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="fonts/jost-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin><style>/*fuentes*/@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:300;font-display:swap;src:url(fonts/cormorant-garamond-latin-300-normal.woff2) format('woff2')}@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/cormorant-garamond-latin-400-normal.woff2) format('woff2')}@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/cormorant-garamond-latin-500-normal.woff2) format('woff2')}@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/cormorant-garamond-latin-600-normal.woff2) format('woff2')}@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:300;font-display:swap;src:url(fonts/cormorant-garamond-latin-300-italic.woff2) format('woff2')}@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:swap;src:url(fonts/cormorant-garamond-latin-400-italic.woff2) format('woff2')}@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500;font-display:swap;src:url(fonts/cormorant-garamond-latin-500-italic.woff2) format('woff2')}@font-face{font-family:'Jost';font-style:normal;font-weight:300;font-display:swap;src:url(fonts/jost-latin-300-normal.woff2) format('woff2')}@font-face{font-family:'Jost';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/jost-latin-400-normal.woff2) format('woff2')}@font-face{font-family:'Jost';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/jost-latin-500-normal.woff2) format('woff2')}@font-face{font-family:'Jost';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/jost-latin-600-normal.woff2) format('woff2')}</style>
+<link rel="stylesheet" href="fuego-base.css?v=2">
+<link rel="stylesheet" href="fuego-paginas.css?v=2">
+<style>
+.cgrid{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:start}
+.fcard{background:#FBF8F2;border:1px solid var(--line);border-radius:30px;padding:38px;box-shadow:0 20px 50px rgba(60,45,35,.08)}
+.fcard h2{font-family:var(--serif);font-size:2rem;font-weight:400;color:var(--ink);margin:0 0 6px}
+.fld{display:flex;flex-direction:column;gap:6px;margin-top:18px}
+.fld label{font-size:.82rem;color:var(--ink);font-weight:500}
+.fld input,.fld select,.fld textarea{font:inherit;font-size:1rem;padding:14px 16px;border:1.5px solid #e2d8cb;border-radius:14px;background:#fff;color:var(--ink);width:100%;transition:border-color .2s,box-shadow .2s}
+.fld textarea{min-height:130px;resize:vertical}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--fire);box-shadow:0 0 0 4px rgba(184,71,43,.12)}
+.fld .err{color:#b3261e;font-size:.8rem;min-height:1em}
+.fld.bad input,.fld.bad select,.fld.bad textarea{border-color:#b3261e}
+.chkrow{display:flex;gap:10px;align-items:flex-start;margin-top:18px;font-size:.86rem}
+.chkrow input{margin-top:4px;width:18px;height:18px;accent-color:var(--fire)}
+.hp{position:absolute;left:-9999px;opacity:0}
+.fcard .btn{margin-top:22px;width:100%;text-align:center}
+.fok,.ferr{margin-top:18px;padding:16px 18px;border-radius:16px;font-size:.92rem}
+.fok{background:#e8f3ea;color:#2f5d3a}
+.ferr{background:#fbe9e7;color:#8c1d18}
+.fok[hidden],.ferr[hidden]{display:none}
+.fnote{font-size:.78rem;color:var(--grey);margin:14px 0 0;text-align:center}
+.side{display:flex;flex-direction:column;gap:14px}
+.opt-card{display:block;padding:26px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(135deg,#FBF8F2,#ECE6DC);transition:transform .3s,box-shadow .3s}
+.opt-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(60,45,35,.1)}
+.opt-card.hi{background:linear-gradient(135deg,#EBCFC0,#E4C0AF)}
+.opt-card small{font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;color:#B8472B}
+.opt-card b{display:block;font-family:var(--serif);font-size:1.6rem;font-weight:400;color:var(--ink);margin:4px 0}
+.opt-card p{margin:0;font-size:.92rem}
+@media(max-width:900px){.cgrid{grid-template-columns:1fr}.fcard{padding:26px 22px}}
+</style>
+<link rel="stylesheet" href="fuego-ajustes.css?v=2">
+<style>
+.guide2{display:flex;align-items:flex-end;gap:14px;justify-self:center}
+.guide2 img{width:190px;height:auto;animation:flt2 5s ease-in-out infinite;filter:drop-shadow(0 14px 20px rgba(120,64,28,.22))}
+.gbub2{background:#FBF8F2;border:1px solid var(--line);border-radius:18px 18px 18px 4px;padding:14px 18px;font-family:var(--serif);font-style:italic;font-size:1.25rem;line-height:1.3;color:var(--ink);max-width:200px;margin-bottom:46px}
+@keyframes flt2{50%{transform:translateY(-10px)}}
+@media(max-width:900px){.guide2{order:2}.guide2 img{width:130px}}
+@media(prefers-reduced-motion:reduce){.guide2 img{animation:none}}
+</style>
+<link rel="stylesheet" href="fuego-paleta.css?v=2">
+<title>Contacto y agenda | Fuego Alquímico</title>
+<meta name="description" content="Escríbeme por formulario o WhatsApp, o agenda tu Conversación de Sintonía gratuita de 30 minutos.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="author" content="Jeanett Romero Zurita">
+<meta name="theme-color" content="#F7F2EA">
+<link rel="canonical" href="https://fuegoalquimico.com/contacto.html">
+<link rel="alternate" hreflang="es" href="https://fuegoalquimico.com/contacto.html">
+<link rel="alternate" type="text/plain" href="https://fuegoalquimico.com/llms.txt" title="Resumen para asistentes de IA">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fuego Alquímico">
+<meta property="og:locale" content="es_LA">
+<meta property="og:title" content="Contacto y agenda | Fuego Alquímico">
+<meta property="og:description" content="Escríbeme por formulario o WhatsApp, o agenda tu Conversación de Sintonía gratuita de 30 minutos.">
+<meta property="og:url" content="https://fuegoalquimico.com/contacto.html">
+<meta property="og:image" content="https://fuegoalquimico.com/og-fuegoalquimico.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Contacto y agenda | Fuego Alquímico">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contacto y agenda | Fuego Alquímico">
+<meta name="twitter:description" content="Escríbeme por formulario o WhatsApp, o agenda tu Conversación de Sintonía gratuita de 30 minutos.">
+<meta name="twitter:image" content="https://fuegoalquimico.com/og-fuegoalquimico.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Organization","ProfessionalService"],"@id":"https://fuegoalquimico.com/#org","name":"Fuego Alquímico","url":"https://fuegoalquimico.com/","logo":{"@type":"ImageObject","url":"https://fuegoalquimico.com/LOGO_FUEGO_ALQUIMICO.png"},"image":"https://fuegoalquimico.com/og-fuegoalquimico.jpg","description":"Acompañamiento online, Bitácora Atemporal, curso Tu Energía Habla y mentoría de proyectos de JRZ Alquimia Creativa.","sameAs":["https://instagram.com/fuegoalquimico","https://instagram.com/jrzalquimiacreativa"],"founder":{"@id":"https://fuegoalquimico.com/#jeanett"},"areaServed":"Online","availableLanguage":"es","contactPoint":{"@type":"ContactPoint","contactType":"customer support","telephone":"+58-412-3791495","url":"https://wa.me/584123791495","availableLanguage":"es"}},{"@type":"Person","@id":"https://fuegoalquimico.com/#jeanett","name":"Jeanett Romero Zurita","jobTitle":"Terapeuta biointegral","url":"https://fuegoalquimico.com/sobre-mi.html","worksFor":{"@id":"https://fuegoalquimico.com/#org"},"knowsAbout":["Reiki","Biodescodificación","Flores de Bach","Radiestesia terapéutica","Técnica de Liberación Emocional","Terapia de Respuesta Espiritual","Acompañamiento de procesos personales"],"knowsLanguage":"es","sameAs":["https://instagram.com/fuegoalquimico"]},{"@type":"WebSite","@id":"https://fuegoalquimico.com/#website","url":"https://fuegoalquimico.com/","name":"Fuego Alquímico","inLanguage":"es","publisher":{"@id":"https://fuegoalquimico.com/#org"}},{"@type":"ContactPage","url":"https://fuegoalquimico.com/contacto.html","name":"Contacto y agenda","about":{"@id":"https://fuegoalquimico.com/#org"},"inLanguage":"es"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Inicio","item":"https://fuegoalquimico.com/"},{"@type":"ListItem","position":2,"name":"Contacto","item":"https://fuegoalquimico.com/contacto.html"}]}]}</script>
+<link rel="stylesheet" href="fuego-tipografia.css?v=2">
+</head>
+<body class="contacto">
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="prog" id="prog"></div>
+<header class="header">
+<nav class="nav">
+  <a class="brand" href="index.html" aria-label="Fuego Alquímico, inicio">
+    <span class="brand-mark"><img src="ICONO_FUEGO_ALQUIMICO.webp" alt="" width="38" height="38"></span>
+    <span class="brand-text">Fuego Alquímico<small>Hacia el encuentro contigo</small></span>
+  </a>
+  <div class="navlinks"><a href="index.html">Inicio</a><a href="acompanamiento.html">Acompañamiento</a><a href="tu-energia-habla.html">Tu Energía Habla</a><div class="dd"><a href="bitacora.html">Bitácora</a><div class="dd-menu"><a href="bitacora.html#bf-umbral">El umbral</a><a href="bitacora.html#bf-portales">Los portales</a><a href="bitacora.html#bf-compra">Qué incluye</a><a href="bitacora.html#bf-arq">Arquitectura</a><a href="bitacora.html#bf-biblio">Bibliografía</a><a href="bitacora.html#bf-faq">Preguntas</a></div></div><a href="jrz-alquimia-creativa.html">Mentoría de proyectos</a><div class="dd"><a href="recursos.html">Recursos</a><div class="dd-menu"><a href="recursos.html#carta">Tu carta de hoy</a><a href="recursos.html#pausa">Un minuto de pausa</a><a href="recursos.html#primer-paso">De la idea al primer paso</a><a href="quiz-diosas.html">Quiz de las diosas</a><a href="test-energetico.html">Test bioenergético exprés</a></div></div><a href="sobre-mi.html">Sobre mí</a><a href="contacto.html" class="nav-cta">Contacto</a></div>
+  <button class="menu" aria-label="Abrir menú">☰</button>
+</nav>
+</header>
+<main id="contenido">
+<section class="pg-hero has-img"><div class="wrap hero2 reveal"><div><p class="eyebrow">Contacto y agenda</p><h1 class="title">Escríbeme o<br><em style="color:var(--fire)">agenda tu cita.</em></h1><p class="lead">Cuéntame qué buscas y te respondo personalmente. Si prefieres hablarlo primero, agenda la Conversación de Sintonía: treinta minutos, gratuita y sin compromiso.</p></div><div class="guide2"><img src="AVATAR_FUEGO_ELEMENTAL.webp" alt="" width="190" height="250" loading="eager"><div class="gbub2">¿En qué te acompaño?</div></div></div></section>
+<section class="section"><div class="wrap cgrid"><div class="fcard reveal"><h2>Cuéntame qué buscas</h2><p style="margin:0;font-size:.92rem">Los campos con * son necesarios.</p>
+<form id="cform" novalidate><div class="hp" aria-hidden="true"><label>No rellenar<input type="text" name="website" id="hp" tabindex="-1" autocomplete="off"></label></div>
+<div class="fld"><label for="n">Tu nombre *</label><input id="n" name="nombre" autocomplete="name" required aria-describedby="n-e"><span class="err" id="n-e"></span></div>
+<div class="fld"><label for="c">WhatsApp o correo para responderte *</label><input id="c" name="contacto" autocomplete="email" inputmode="email" required aria-describedby="c-e"><span class="err" id="c-e"></span></div>
+<div class="fld"><label for="i">Me interesa *</label><select id="i" name="interes"><option value="sintonia">Conversación de Sintonía (gratuita)</option><option value="codigo">Código de la Emoción</option><option value="limpieza">Limpieza energética</option><option value="encuentro">Encuentro Alquímico</option><option value="proceso">Proceso de Transformación</option><option value="camino">Camino de Integración Alquímica</option><option value="curso">Curso Tu Energía Habla</option><option value="bitacora">Bitácora Atemporal</option><option value="mentoria">Mentoría de proyectos (JRZ Alquimia Creativa)</option><option value="otro">Otro tema</option></select></div>
+<div class="fld"><label for="m">Tu mensaje *</label><textarea id="m" name="mensaje" required aria-describedby="m-e" placeholder="Cuéntame brevemente tu momento o tu idea"></textarea><span class="err" id="m-e"></span></div>
+<div class="chkrow"><input type="checkbox" id="ok" name="consentimiento"><label for="ok">Acepto que usen estos datos solo para responder mi mensaje.</label></div><span class="err" id="ok-e" style="color:#b3261e;font-size:.8rem"></span>
+<button class="btn btn-dark" type="submit">Enviar mensaje →</button><div class="fok" id="fok" role="status" hidden></div><div class="ferr" id="ferr" role="alert" hidden></div>
+<p class="fnote">Al enviar, se abre WhatsApp con tu mensaje listo para mandar.</p></form></div>
+<div class="side"><a class="opt-card hi reveal" href="https://calendly.com/tucirculosagrado" target="_blank" rel="noopener"><small>Gratis · 30 minutos</small><b>Conversación de Sintonía</b><p>Para conocernos y ver si este acompañamiento es para ti.</p></a>
+<a class="opt-card reveal" href="https://wa.me/584123791495?text=Hola%20Jeanett%2C%20quiero%20hacerte%20una%20consulta" target="_blank" rel="noopener"><small>Directo</small><b>WhatsApp</b><p>Escríbeme sin rellenar el formulario.</p></a>
+<a class="opt-card reveal" href="https://instagram.com/fuegoalquimico" target="_blank" rel="noopener"><small>Síguenos</small><b>@fuegoalquimico</b><p>Acompañamiento, Bitácora y curso.</p></a>
+<a class="opt-card reveal" href="https://instagram.com/jrzalquimiacreativa" target="_blank" rel="noopener"><small>Síguenos</small><b>@jrzalquimiacreativa</b><p>Mentoría de proyectos e identidad de marca.</p></a></div></div></section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <a class="brand" href="index.html" aria-label="Fuego Alquímico, inicio"><span class="brand-text">Fuego Alquímico</span></a>
+        <p>Acompañamiento, experiencias y herramientas para explorar tu mundo interior.</p>
+      </div>
+      <nav class="f-col" aria-label="Explora"><h3>Explora</h3><a href="acompanamiento.html">Acompañamiento</a><a href="tu-energia-habla.html">Tu Energía Habla</a><a href="bitacora.html">Bitácora Atemporal</a><a href="jrz-alquimia-creativa.html">Mentoría de proyectos</a><a href="quiz-diosas.html">Quiz de las Diosas</a><a href="test-energetico.html">Test bioenergético</a><a href="recursos.html">Recursos</a><a href="preguntas-frecuentes.html">Preguntas frecuentes</a></nav>
+      <nav class="f-col" aria-label="Jeanett"><h3>Jeanett</h3><a href="sobre-mi.html">Sobre mí</a><a href="contacto.html">Contacto</a><a href="https://calendly.com/tucirculosagrado" target="_blank" rel="noopener">Agenda una conversación</a></nav>
+      <div class="f-col"><h3>Sígueme</h3><a href="https://instagram.com/fuegoalquimico" target="_blank" rel="noopener">@fuegoalquimico</a><a href="https://instagram.com/jrzalquimiacreativa" target="_blank" rel="noopener">@jrzalquimiacreativa</a><a href="https://wa.me/584123791495" target="_blank" rel="noopener">WhatsApp</a></div>
+    </div>
+    <div class="f-base"><span>© 2026 Fuego Alquímico · Jeanett Romero</span><span>El acompañamiento no sustituye la atención médica o psicológica.</span></div>
+  </div>
+</footer>
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.1});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const mb=document.querySelector('.menu'),nl=document.querySelector('.navlinks');if(mb&&nl){mb.addEventListener('click',()=>mb.setAttribute('aria-expanded',nl.classList.toggle('open')));nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nl.classList.remove('open');mb.setAttribute('aria-expanded','false')}))}
+const pr=document.getElementById('prog');addEventListener('scroll',()=>{const h=document.documentElement.scrollHeight-innerHeight;pr.style.width=(h>0?scrollY/h*100:0)+'%'},{passive:true});
+const $=id=>document.getElementById(id),WA=t=>'https://wa.me/584123791495?text='+encodeURIComponent(t);
+const FORM_ENDPOINT='';/* Para recibir los mensajes por correo, pega aquí el enlace de tu formulario (Formspree, Getform…). Vacío = envía por WhatsApp. */
+const LBL={sintonia:'la Conversación de Sintonía',encuentro:'el Encuentro Alquímico',codigo:'el Código de la Emoción',limpieza:'la Limpieza energética',proceso:'el Proceso de Transformación',camino:'el Camino de Integración Alquímica',curso:'el curso Tu Energía Habla',bitacora:'la Bitácora Atemporal',mentoria:'la Mentoría de proyectos',otro:'otro tema'};
+const q=new URLSearchParams(location.search).get('interes');if(q&&LBL[q])$('i').value=q;
+const form=$('cform');const bad=(id,msg)=>{$(id+'-e').textContent=msg;const f=$(id)&&$(id).closest('.fld');if(f)f.classList.toggle('bad',!!msg);return !msg};
+form.addEventListener('submit',async e=>{e.preventDefault();$('fok').hidden=$('ferr').hidden=true;if($('hp').value)return;
+const n=$('n').value.trim(),c=$('c').value.trim(),m=$('m').value.trim(),i=$('i').value;
+let ok=true;ok=bad('n',n.length<2?'Escribe tu nombre.':'')&&ok;ok=bad('c',(/^\S+@\S+\.\S+$/.test(c)||c.replace(/\D/g,'').length>=7)?'':'Escribe un WhatsApp o un correo válido.')&&ok;ok=bad('m',m.length<10?'Cuéntame un poco más (mínimo 10 caracteres).':'')&&ok;
+$('ok-e').textContent=$('ok').checked?'':'Necesito tu autorización para responderte.';ok=ok&&$('ok').checked;if(!ok){const f=form.querySelector('.bad input,.bad textarea');if(f)f.focus();return}
+const msg=`Hola Jeanett, soy ${n}. Me interesa ${LBL[i]}. ${m} (Contacto: ${c})`;
+if(FORM_ENDPOINT){try{const r=await fetch(FORM_ENDPOINT,{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify({nombre:n,contacto:c,interes:LBL[i],mensaje:m})});if(!r.ok)throw 0;$('fok').textContent='Mensaje enviado. Te responderé pronto.';$('fok').hidden=false;form.reset()}catch(x){$('ferr').textContent='No se pudo enviar. Escríbeme directamente por WhatsApp.';$('ferr').hidden=false}}
+else{window.open(WA(msg),'_blank','noopener');$('fok').textContent='Se abrió WhatsApp con tu mensaje listo para enviar. Si no se abrió, pulsa el botón de WhatsApp de la derecha.';$('fok').hidden=false}});
+</script>
+<button class="totop" id="totop" type="button" aria-label="Volver arriba">↑</button>
+<script>(function(){var b=document.getElementById('totop');if(!b)return;var m=document.getElementById('mcta');function u(){b.classList.toggle('show',scrollY>700);document.body.classList.toggle('mcta-on',!!(m&&m.classList.contains('show')))}addEventListener('scroll',u,{passive:true});u();b.addEventListener('click',function(){scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'})})})();</script>
+<script>document.addEventListener('keydown',function(e){if(e.key!=='Escape')return;var n=document.querySelector('.navlinks'),m=document.querySelector('.menu');if(n&&m&&n.classList.contains('open')){n.classList.remove('open');m.setAttribute('aria-expanded','false');m.focus()}});</script>
+</body></html>
