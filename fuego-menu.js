@@ -1,0 +1,1 @@
+document.querySelectorAll('.dd').forEach(function(d){var t=d.querySelector('.dd-t');if(!t)return;t.addEventListener('click',function(e){e.preventDefault();var o=d.classList.toggle('open');t.setAttribute('aria-expanded',o)})});
