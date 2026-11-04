@@ -1,3 +1,0 @@
-/* Fuego Alquímico · submenús del menú (celular) */
-.dd-t{display:none;background:none;border:0;color:#B8472B;font-size:1.1rem;line-height:1;padding:10px 14px;cursor:pointer;transition:transform .2s}.dd-t:focus-visible{outline:3px solid #B8472B;outline-offset:2px}
-@media(max-width:1120px){.navlinks.open .dd{display:flex;flex-wrap:wrap;align-items:center;width:100%}.navlinks.open .dd>a{flex:1}.navlinks.open .dd>a:after{display:none}.navlinks.open .dd-t{display:inline-flex}.navlinks.open .dd.open .dd-t{transform:rotate(180deg)}.navlinks.open .dd:not(.open) .dd-menu{display:none}.navlinks.open .dd.open .dd-menu{display:flex;width:100%}}
